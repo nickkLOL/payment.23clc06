@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *::-webkit-scrollbar {
+    @apply h-0 w-0 select-none;
+  }
+
+  html,
+  body {
+    @apply m-0 p-0 leading-4;
+  }
+
+  main {
+    @apply bg-text-primary min-h-[calc(100vh-88px)] overflow-y-auto;
+  }
+
+  input {
+    &[type="number"]::-webkit-inner-spin-button,
+    &[type="number"]::-webkit-outer-spin-button {
+      @apply m-0 appearance-none;
+    }
+  }
+}
+
+@layer components {
+  .bg-text {
+    &-primary {
+      @apply bg-sab-color-1-dark text-gray-100 dark:bg-gray-100 dark:text-sab-color-1;
+    }
+    &-secondary {
+      @apply bg-sab-color-3-dark text-gray-100 dark:bg-gray-100 dark:text-sab-color-3-dark;
+    }
+  }
+
+  .style {
+    &-input {
+      @apply bg-text-primary flex w-full flex-1 rounded-md border border-gray-400 focus:ring-inset focus:ring-gray-400 dark:border-gray-300 focus:dark:ring-violet-600 sm:text-sm;
+    }
+    &-p {
+      @apply leading-6;
+    }
+    &-btn {
+      @apply w-max rounded-md bg-sab-color-1 px-4 py-3 font-semibold text-gray-100;
+    }
+  }
+
+  .form-err {
+    @apply text-red-400 dark:text-red-600;
+  }
+
+  .modal-backdrop::backdrop {
+    @apply cursor-pointer backdrop-blur-sm;
+  }
+}
+
+@layer utilities {
+  .flexcenter {
+    @apply flex items-center justify-center;
+  }
+
+  .flexcentercol {
+    @apply flexcenter flex-col;
+  }
+}
